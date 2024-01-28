@@ -69,6 +69,7 @@ Figma Link : https://www.figma.com/file/FCX69xkrOFVbCETL9qAWMs/%ED%8C%80_%EB%8B%
 
 
 <p4> List of Players Page</p4>
+
 ![List of Players ](https://github.com/williamEKim/Match-Flow/assets/157926825/5fdca5e7-3108-41af-9dcb-4f17bddccd39)
 
 
