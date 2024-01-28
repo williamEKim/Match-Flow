@@ -94,7 +94,15 @@ Figma Link : https://www.figma.com/file/FCX69xkrOFVbCETL9qAWMs/%ED%8C%80_%EB%8B%
 
 
 
+## How to Locally Install
 
+`pip install -r requirements.txt`
+
+`npm i`
+
+`npm i -g nodemon`
+
+`npm run start`
 
 
 
