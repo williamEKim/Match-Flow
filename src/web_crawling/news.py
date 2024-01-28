@@ -5,7 +5,7 @@ import sys
 import json
 import time
 
-client = OpenAI(api_key = "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", organization = "org-wtrrt7KeUZ4jD9BpsDIGnpd2")
+client = OpenAI(api_key = "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", organization = "org-wtrrt7KeUZ4jD9BpsDIGnpd2")
 headers = { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/100.0.48496.75" }
 
 espn_home = "https://www.espn.com"

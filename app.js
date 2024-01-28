@@ -94,23 +94,41 @@ appInstance.get('/about-us', (request, response) => {
     response.redirect('/about');
 });
 
+// APIs
+appInstance.use(express.json());
+const apiRouter = require('./routes/api')
+appInstance.use('/api', apiRouter);
+
+
+
+
+
+// appInstance.get('/:id', async (request, response) => {
+//     console.log('here');
+//     let result;
+//     const api_id = parseInt(request.params.id);
+//     switch (api_id) {
+//         case "news":
+            
+//             try {
+//                 result = await executePython('src/web_crawling/news.py', []);
+//                 console.log(result)
+//                 response.json({ result: result });
+//             } catch (error) {
+//                 response.status(500).json({ error: error });
+//             }
+//             break;
+    
+//         default:
+//             break;
+//     }
+// });
+
+
+
 // 404 page (default case)
 appInstance.use((request, response) => {
     response.status(404).render('404', {
         title: "404 Not Found"
     });
-});
-
-
-// APIs
-appInstance.get('/api', async (request, response) => {
-    let result
-    try {
-        result = await executePython('src/web_crawling/news.py', []);
-        response.json({ result: result });
-    } catch (error) {
-        response.status(500).json({ error: error });
-    }
-
-    response.json({result: result});
 });

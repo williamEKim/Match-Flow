@@ -1,0 +1,2 @@
+# GET http://localhost:3300/api/news
+GET http://localhost:3300/api/victory_rate_calculator
