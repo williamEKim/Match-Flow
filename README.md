@@ -42,19 +42,19 @@ MF.gg 에서 저희는 ATP 상위 50명의 선수들이 가지고 있는 데이�
 
 <p1>**Back-end code (API)** </p>
 
-<p2>Victory Calculator</p2>
+<p2><u>Victory Calculator</u></p2>
 
 <img width="883" alt="API" src="https://github.com/williamEKim/Match-Flow/assets/157926825/c7dd29c7-a6a4-4bef-b75e-59b122d04296">
 
-<p3>Victory Rate Calculator</p3>
+<p3><u>Victory Rate Calculator</u></p3>
 
 <img width="899" alt="API2" src="https://github.com/williamEKim/Match-Flow/assets/157926825/fba7c93d-fdfa-4d5a-9f5e-9d0c62b27961">
 
-<p4>News image and link/p4>
+<p4><u>News image and link</u></p4>
 
 <img width="896" alt="API3" src="https://github.com/williamEKim/Match-Flow/assets/157926825/3706a117-c129-49fa-94c1-dbe004807222">
 
-<p5>API Document</p5>
+<p5><u>API Document</u></p5>
 
 <img width="886" alt="API4" src="https://github.com/williamEKim/Match-Flow/assets/157926825/f8ea8aec-ce61-48f4-9957-0bb32cceda82">
 
