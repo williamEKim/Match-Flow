@@ -3,6 +3,10 @@ const favicon = require('serve-favicon');
 const { spawn } = require('child_process');
 const { result } = require('lodash');
 
+const fs = require('fs');
+const path = require('path');
+const filePath = path.join(__dirname, 'pictures');
+
 // express app
 const appInstance = express();
 
@@ -14,28 +18,9 @@ appInstance.set('views', 'views');
 // Full path to the Python executable
 const pythonExecutable = '/opt/homebrew/bin/python3'; // Change this to the actual path
 
-// const childPython = spawn(pythonExecutable, [`--version`]);
-
-// childPython.stdout.on('data', (data) => {
-//     console.log(`stdout: ${data}`);
-// });
-
-// childPython.stderr.on('data', (data) => {
-//     console.error(`stderr: ${data}`);
-// });
-
-// childPython.on('error', (error) => {
-//     console.error(`Error spawning Python: ${error.message}`);
-// });
-
-// childPython.on('close', (code) => {
-//     console.log(`Python process exited with code ${code}`);
-// });
-
-
 
 // path configuration
-// appInstance.use(express.static('public'));
+appInstance.use(express.static('public'));
 
 const executePython = async (script, args) => {
     const arguments = args.map(arg => arg.toString());
@@ -48,7 +33,7 @@ const executePython = async (script, args) => {
 
         // Get output from python script
         py.stdout.on('data', (data) => {
-            console.log(`stdout: ${data}`);
+            // console.log(`stdout: ${data}`);
             output = JSON.parse(data);
         });
 
@@ -68,24 +53,26 @@ const executePython = async (script, args) => {
 }
 
 // favicon configuration
-appInstance.use(favicon(__dirname + '/images/icons.ico/favicon.ico'));
+appInstance.use(favicon(__dirname + '/public/images/icons.ico/favicon.ico'));
 
 // listen for request
 appInstance.listen(3300);
 
 appInstance.get('/', async (request, response) => {
     let result;
-    try {
-        result = await executePython('src/web_crawling/news.py', []);
-    } catch (error) {
-        response.status(500).json({ error: error });
+    if(!result) {
+        try {
+            result = await executePython('src/web_crawling/news.py', []);
+        } catch (error) {
+            response.status(500).json({ error: error });
+        }
+        
     }
-
     response.render('index', {
         title: "Home",
         result
     });
-
+    // response.json({result: result});
 
 });
 
@@ -115,10 +102,10 @@ appInstance.use((request, response) => {
 
 
 // APIs
-appInstance.get('/api/topnews', async (request, response) => {
+appInstance.get('/api', async (request, response) => {
+    let result
     try {
-        const result = await executePython('python/script.py', [8, 5]);
-
+        result = await executePython('src/web_crawling/news.py', []);
         response.json({ result: result });
     } catch (error) {
         response.status(500).json({ error: error });
