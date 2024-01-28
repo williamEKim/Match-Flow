@@ -33,7 +33,7 @@ const executePython = async (script, args) => {
 
         // Get output from python script
         py.stdout.on('data', (data) => {
-            // console.log(`stdout: ${data}`);
+            console.log(`stdout: ${data}`);
             output = JSON.parse(data);
         });
 
@@ -68,6 +68,7 @@ appInstance.get('/', async (request, response) => {
         }
         
     }
+    
     response.render('index', {
         title: "Home",
         result

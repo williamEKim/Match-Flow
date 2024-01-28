@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+    <body>
+        <% var article_counter = 0, first_index, second_index, third_index %>
+        <div class="wireframe">
+            <div class="container">
+                <div class="overlap">
+                    <div class="overlap-group">
+                        <div class="group">
+                            <div class="win-calculator">
+                                <div class="overlap-group-2">
+                                    <div class="rectangle"></div>
+                                    <img class="player-image" src="../../images/players/Medvedev.png" alt="Medvedev" />
+                                </div>
+                                <div class="rectangle-2"></div>
+                                <div class="rectangle-3"></div>
+                                <div class="title">Victory Prediction Calculator</div>
+                            </div>
+                        </div>
+                        <img class="line" src="img/line-1.svg" />
+                        <div class="rectangle-4"></div>
+                        <img class="logo" src="../../images/icons.ico/logo_512x512.png" />
+                        <div class="title">MATCH FLOW</div>
+                        <img class="player-image" src="../../images/players/Sinner.png" />
+                        <div class="text">See Result</div>
+                    </div>
+                    <div class="news-section">
+                        <% for (var i = 0; i < 3; i++) { %>
+                        <div class="news-item">
+                            <div class="image-wrapper">
+                                <div class="img-wrapper">
+                                    <img class="news-image" src="<%= result[i].img.toString() %>" />
+                                </div>
+                            </div>
+                            <div class="news-details">
+                                <a class="article_url" href="<%= result[i].url.toString() %>">
+                                    <p class="news-title"><%= result[i].title %></p>
+                                </a>
+                                <p class="news-date"><%= result[i].date %></p>
+                                <p class="news-response"><%= result[i].response %></p>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+                    <div class="title">Recent News</div>
+                    <% for (var i = 0; i < 3; i++) { %>
+                    <div class="news-title-wrapper">
+                        <a class="article_url" href="<%= result[i].url.toString() %>">
+                            <p class="news-title"><%= result[i].title %></p>
+                        </a>
+                    </div>
+                    <% } %>
+                    <% for (var i = 0; i < 3; i++) { %>
+                    <p class="author-info-<%= result[i].author %>">
+                        <span class="author-time"><%= result[i].time %> -- <%= result[i].author %><br /></span> <span
+                            class="info-space"><br /></span>
+                    </p>
+                    <% } %>
+                    <% for (var i = 0; i < 3; i++) { %>
+                    <p class="news-response">
+                        <%= result[i].response %>
+                    </p>
+                    <% } %>
+                </div>
+            </div>
+            <div class="top-players">Top 5 Players | Database</div>
+            <div class="more-players-button">
+                <div class="button-wrapper">
+                    <div class="button-text">See More Players</div>
+                </div>
+            </div>
+            <div class="overlap-3">
+                <div class="header"></div>
+                <div class="overlap-wrapper">
+                    <div class="overlap-4">
+                        <div class="title">MATCH FLOW</div>
+                        <div class="title">MATCH FLOW</div>
+                    </div>
+                </div>
+                <p class="contact-info">Instagram : riverside_likelion<br />Email : ucriverside@likelion.org</p>
+                <img class="logo" src="../../images/icons.ico/logo_192x192.png" />
+            </div>
+            <div class="overlap-5">
+                <div class="overlap-group-wrapper">
+                    <div class="overlap-6">
+                        <div class="player-database">
+                            <div class="rectangle-10"></div>
+                            <div class="rectangle-6"></div>
+                            <div class="rectangle-7"></div>
+                            <div class="rectangle-8"></div>
+                            <div class="rectangle-9"></div>
+                        </div>
+                        <div class="player-name-flag">
+                            <div class="player">
+                                <div class="player-name">Novak Djokovic</div>
+                            </div>
+                            <div class="player-name">Jannik Sinner</div>
+                            <div class="player-name">Danii Medvedev</div>
+                            <div class="player-name">Alexander Zverev</div>
+                            <img class="player-image" src="../../images/players/Medvedev.png" />
+                        </div>
+                        <img class="player-image" src="../../images/players/Djokovic.png" />
+                        <img class="player-image" src="../../images/players/Alcaraz.png" />
+                        <img class="player-image" src="../../images/flags/DjokovicCountry.png" />
+                        <img class="player-image" src="../../images/players/Sinner.png" />
+                        <img class="player-image" src="../../images/flags/SinnerCountry.png" />
+                        <img class="player-image" src="../../images/players/Zverev.png" />
+                        <img class="player-image" src="../../images/flags/ZverevCountry.png" />
+                    </div>
+                </div>
+                <img class="player-image" src="../../images/flags/AlcarazCountry.png" />
+                <div class="player-name">Carlos Alcaraz</div>
+            </div>
+            <p class="player-info">Ranking: 1<br /><br />Age: 36.6<br /><br />Winning %: 88.9%</p>
+            <p class="player-info">Ranking: 2<br /><br />Age: 22.2<br /><br />Winning %: 78.6%</p>
+            <p class="player-info">Ranking: 3<br /><br />Age: 20.5<br /><br />Winning %: 84.4%</p>
+            <p class="player-info">Ranking: 4<br /><br />Age: 27.7<br /><br />Winning %: 78.8%</p>
+            <p class="player-info">Ranking: 5<br /><br />Age: 26.6<br /><br />Winning %: 67.1%</p>
+        </div>
+        <% include('./partials/footer.ejs') %>
+    </body>
+</html>
