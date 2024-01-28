@@ -40,13 +40,25 @@ MF.gg 에서 저희는 ATP 상위 50명의 선수들이 가지고 있는 데이�
 
 테니스에서 서브는 중요한 요소중 하나로 불리웁니다.  전문가들이 측정한 데이터와 API 기술을 결합하면은 더 정밀하고 정확한 예측을 할 수 있습니다.
 
-<p1>**Back-end code**</p>
+<p1>**Back-end code (API)** </p>
+
+<p2>Victory Calculator</p2>
 
 <img width="883" alt="API" src="https://github.com/williamEKim/Match-Flow/assets/157926825/c7dd29c7-a6a4-4bef-b75e-59b122d04296">
 
+<p3>Victory Rate Calculator</p3>
+
 <img width="899" alt="API2" src="https://github.com/williamEKim/Match-Flow/assets/157926825/fba7c93d-fdfa-4d5a-9f5e-9d0c62b27961">
 
+<p4>News image and link/p4>
+
 <img width="896" alt="API3" src="https://github.com/williamEKim/Match-Flow/assets/157926825/3706a117-c129-49fa-94c1-dbe004807222">
+
+<p5>API Document</p5>
+
+<img width="886" alt="API4" src="https://github.com/williamEKim/Match-Flow/assets/157926825/f8ea8aec-ce61-48f4-9957-0bb32cceda82">
+
+
 
 ## 결과 및 추후계발 방안
 현재 웹사이트는 테니스를 베이스로 제작되었지만 추후 축구, 야구등 다양한 스포츠까지 서비스 제공이 가능하고, 광고 혹은 각 스포츠리그와 제휴등을 통해 수익성까지 챙길 수 있는 다재다능의 웹사이트 입니다. 저희는 테니스의 서브뿐만이 아니라 알고리즘과 수식 디자인을 활용하여 더 복잡하고 어려운 문제들또한 해결할 수 있다고 생각합니다. 감사합니다!
