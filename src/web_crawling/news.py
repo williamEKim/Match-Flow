@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 from openai import OpenAI
 
-client = OpenAI(api_key = "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", organization = "org-wtrrt7KeUZ4jD9BpsDIGnpd2")
+client = OpenAI(api_key = "blank", organization = "org-wtrrt7KeUZ4jD9BpsDIGnpd2")
 headers = { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/100.0.48496.75" }
 
 espn_home = "https://www.espn.com"
