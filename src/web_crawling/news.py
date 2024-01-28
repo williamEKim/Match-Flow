@@ -1,8 +1,10 @@
 from bs4 import BeautifulSoup
 import requests
 from openai import OpenAI
+import sys
+import json
 
-client = OpenAI(api_key = "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", organization = "org-wtrrt7KeUZ4jD9BpsDIGnpd2")
+client = OpenAI(api_key = "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", organization = "org-wtrrt7KeUZ4jD9BpsDIGnpd2")
 headers = { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/100.0.48496.75" }
 
 espn_home = "https://www.espn.com"
@@ -16,6 +18,8 @@ html = BeautifulSoup(original_html.text, "html.parser")
 articles = html.find_all("article", attrs={"class":"contentItem"})
 
 article_count = 0
+
+article_array = []
 for context in articles:
     try:
         art_url = espn_home + context.find("a", attrs={"class":"contentItem__padding"})["href"]
@@ -32,7 +36,12 @@ for context in articles:
             prompt = prompt,
             max_tokens = 500
         )
-        print(f"{title}\n{response.choices[0].text}\n==================================================\n")
+        article_array.append({"title":title, "response": response.choices[0].text})
+        # print(f"{title}\n{response.choices[0].text}\n==================================================\n")
         article_count = article_count+1
     except:
         print("\n")
+
+article_json = json.dumps(article_array)
+print(article_json)
+sys.stdout.flush()
