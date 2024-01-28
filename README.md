@@ -1,6 +1,6 @@
 # Match-Flow
 
-Figma Link : https://www.figma.com/file/FCX69xkrOFVbCETL9qAWMs/%ED%8C%80_%EB%8B%A8%EA%B5%B0%ED%95%A0%EC%95%84%EB%B2%84%EC%A7%80%EC%BD%94%EB%94%A9%ED%95%98%EC%8B%9C%EA%B3%A0?type=design&node-id=0%3A1&mode=design&t=7nVwXFddyRx8Ldwi-1
+
 
 Slide Show Link : 
 https://docs.google.com/presentation/d/1EvscDdAIdoDAKPtossmhpWU0Re1Ro0SCcetwusFl1iU/edit?usp=sharing
@@ -28,10 +28,6 @@ We combined the sub-data of professionals and Open AI's API technology and appli
 We believe that we can solve not only tennis serves, but also a variety of problems with the principles of logical design and the strategic application of algorithms, particularly when merged with AI technologies. Thank you! 
 
 
-<h1 align ="center"> 
-  Matchflow.gg(a.k.a MF.gg)에 오신걸 환영합니다!
-</h1>
-
 ## 프로젝트 설명 
 Match-flow는 스포츠 정보 사이트로 각각 사이트에 퍼져있는 정보를 수집하여 하나의 정리된 사이트로 제공하고 있습니다. 저희는 최신 OpenAI/API 기술을 종합하여 선수들이 가지고 있는 각각의 데이터를 분석합니다.
 
@@ -51,6 +47,28 @@ MF.gg 에서 저희는 ATP 상위 50명의 선수들이 가지고 있는 데이�
 Match-flow's logo is designed to portray the purpose of the website at a glance through a combination of each event-related ball (in this case, it will be tennis ball) and graph of statistics.
 
 Match-flow의 로고는 각 종목 관련 공 (이번에 경우는 테니스볼이 되겠죠) 그리고 통계를 표현하여 주는 그래프를 합친 로고를 통하여 한눈에 사이트의 목적을 보여줄 수 있도록 제작해 보았습니다. 
+
+![logo_192x192](https://github.com/williamEKim/Match-Flow/assets/157926825/55dad862-deae-4501-b03c-50cf2c81447a)
+
+## Front-end
+Figma Link : https://www.figma.com/file/FCX69xkrOFVbCETL9qAWMs/%ED%8C%80_%EB%8B%A8%EA%B5%B0%ED%95%A0%EC%95%84%EB%B2%84%EC%A7%80%EC%BD%94%EB%94%A9%ED%95%98%EC%8B%9C%EA%B3%A0?type=design&node-id=0%3A1&mode=design&t=7nVwXFddyRx8Ldwi-1
+
+<p1>Homepage
+![Homepage](https://github.com/williamEKim/Match-Flow/assets/157926825/70f96a85-c5a7-4fe3-9b93-27c8eea5215f)
+</p1>
+
+<p2> Player Detail Page
+![Player Detail page](https://github.com/williamEKim/Match-Flow/assets/157926825/17382968-a859-448c-a69e-e56d0a194fae)
+</p2>
+
+<p3> News Page
+![News](https://github.com/williamEKim/Match-Flow/assets/157926825/22c39b94-77d0-4287-ba99-bd882b361ef7)
+</p3>
+
+<p4> List of Players Page
+![List of Players ](https://github.com/williamEKim/Match-Flow/assets/157926825/5fdca5e7-3108-41af-9dcb-4f17bddccd39)
+</p4>
+
 
 
 
