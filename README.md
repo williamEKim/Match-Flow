@@ -10,14 +10,14 @@ https://docs.google.com/presentation/d/1EvscDdAIdoDAKPtossmhpWU0Re1Ro0SCcetwusFl
 </h1>
 
 ## Project Description
-Match Flow is a sports information site that collects information scattered around many website and provies it as a single organized site. 
+Match Flow is a sports information site that collects information scattered around many websites and provides it as a single organized site. 
 
 We meticulously analyze sub-data from professional players, combining it with OpenAI's new API technology. 
 
 At Match Flow. GG, we are revolutionizing the way we understand and predict the outcomes of tennis matches. Leveraging the power of TennisAbstract's comprehensive data on ATP Top 50 Men players, we delve deep into the nuances of their serve performance a critical and game-defining aspect at the pinnacle of professional tennis.
 
 ## How? 
-Our approach is both unique and rigorous. MF.GG uses Multiple Linear Regression (a.k.a. MLR) algorithm integrated with GPT3.5 Turbo API to process regression Logic.
+Our approach is both unique and rigorous. MF.GG uses a Multiple Linear Regression (a.k.a. MLR) algorithm integrated with GPT3.5 Turbo API to process regression Logic.
 
 This fusion of machine learning and AI technology enables us to process complex regression logic, offering predictions with unprecedented accuracy and precision.
 
@@ -40,7 +40,8 @@ MF.gg 에서 저희는 ATP 상위 50명의 선수들이 가지고 있는 데이�
 
 테니스에서 서브는 중요한 요소중 하나로 불리웁니다.  전문가들이 측정한 데이터와 API 기술을 결합하면은 더 정밀하고 정확한 예측을 할 수 있습니다.
 
-**Back-end code**
+<p1>**Back-end code**</p>
+
 <img width="883" alt="API" src="https://github.com/williamEKim/Match-Flow/assets/157926825/c7dd29c7-a6a4-4bef-b75e-59b122d04296">
 
 <img width="899" alt="API2" src="https://github.com/williamEKim/Match-Flow/assets/157926825/fba7c93d-fdfa-4d5a-9f5e-9d0c62b27961">
