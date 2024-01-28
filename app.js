@@ -1,4 +1,5 @@
 const express = require ('express');
+const favicon = require('serve-favicon')
 
 // express app
 const appInstance = express();
@@ -7,6 +8,11 @@ const appInstance = express();
 appInstance.set('view engine', 'ejs');
     // folder configuration
     appInstance.set('views', 'views')
+// path configuration
+// appInstance.use(express.static('public'));
+
+// favicon configuration
+appInstance.use(favicon(__dirname + '/images/icons.ico/favicon.ico'));
 
 // listen for request
 appInstance.listen(3300);
