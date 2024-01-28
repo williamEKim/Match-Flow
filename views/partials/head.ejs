@@ -2,6 +2,551 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="icon" type="image/png" href="/images/logo_512x512.png"> -->
     <title>Match Flow | <%= title %></title>
+    <style>
+        .wireframe {
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        .wireframe .div {
+            background-color: #ffffff;
+            overflow: hidden;
+            width: 1512px;
+            height: 3560px;
+            position: relative;
+        }
+        
+        .wireframe .overlap {
+            position: absolute;
+            width: 1908px;
+            height: 1094px;
+            top: 0;
+            left: -36px;
+        }
+        
+        .wireframe .overlap-group {
+            position: absolute;
+            width: 1584px;
+            height: 1094px;
+            top: 0;
+            left: 0;
+        }
+        
+        .wireframe .group {
+            position: absolute;
+            width: 908px;
+            height: 574px;
+            top: 415px;
+            left: 183px;
+        }
+        
+        .wireframe .win-calculator {
+            position: relative;
+            width: 910px;
+            height: 574px;
+        }
+        
+        .wireframe .overlap-group-2 {
+            position: absolute;
+            width: 312px;
+            height: 308px;
+            top: 72px;
+            left: 0;
+        }
+        
+        .wireframe .rectangle { /*victory calculator player1 box*/
+            position: absolute;
+            width: 291px;
+            height: 300px;
+            top: 0;
+            left: 21px;
+            background-color: #949494;
+            border-radius: 0%;
+        }
+        
+        .wireframe .medvedev-head { /*victory calculator player1 photo*/
+            position: absolute;
+            width: 288px;
+            height: 200;
+            top: 10px;
+            left: 23px;
+            object-fit: cover;
+        }
+        
+        .wireframe .rectangle-2 { /*victory result button*/
+            position: absolute;
+            width: 283px;
+            height: 86px;
+            top: 488px;
+            left: 257px;
+            background-color: #b7aeae;
+            border-radius: 20px;
+        }
+        
+        .wireframe .rectangle-3 { /*victory calculator player2 box*/
+            position: absolute;
+            width: 291px;
+            height: 300px;
+            top: 72px;
+            left: 463px;
+            background-color: #949494;
+            border-radius: 0%;
+        }
+        
+        .wireframe .text-wrapper {
+            position: absolute;
+            width: 676px;
+            top: -50px;
+            left: 130px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: normal;
+            color: #000000;
+            font-size: 36px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        
+        .wireframe .line {
+            position: absolute;
+            width: 9px;
+            height: 877px;
+            top: 217px;
+            left: 1077px;
+        }
+        
+        .wireframe .rectangle-4 {    /* header */
+            position: absolute;
+            width: 1584px;
+            height: 230px;
+            top: 0;
+            left: 0;
+            background-color: #3f3f3f;
+        }
+        
+        .wireframe .hack-logo {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            top: 28px;
+            left: 150px;
+            object-fit: cover;
+        }
+        
+        .wireframe .text-wrapper-2 {
+            position: absolute;
+            width: 555px;
+            top: 90px;
+            left: 520px;
+            font-family: "Arial Black", sans-serif;
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 110px;
+            letter-spacing: 0;
+            line-height: normal;
+            white-space: nowrap;
+        }
+        
+        .wireframe .sinner-head-may { /*victory calculator player2 photo*/
+            position: absolute;
+            width: 290px;
+            height: 276px;
+            top: 509px;
+            left: 645px;
+            object-fit: cover;
+        }
+        
+        .wireframe .text-wrapper-3 { /*see result*/
+            position: absolute;
+            width: 227px;
+            top: 923px;
+            left: 494px;
+            font-family: "Changa One-Regular", Helvetica;
+            font-weight: 400;
+            color: #ffffff;
+            font-size: 36px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        
+        .wireframe .text-wrapper-4 {
+            position: absolute;
+            width: 272px;
+            top: 827px;
+            left: 451px;
+            font-family: "Jockey One-Regular", Helvetica;
+            font-weight: 400;
+            color: #6a8200;
+            font-size: 36px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        
+        .wireframe .overlap-2 {
+            position: absolute;
+            width: 189px;
+            height: 569px;
+            top: 451px;
+            left: 1112px;
+        }
+        
+        .wireframe .recent-news-blocks {
+            position: absolute;
+            width: 189px;
+            height: 569px;
+            top: 0;
+            left: 0;
+        }
+        
+        .wireframe .image-wrapper {
+            position: absolute;
+            width: 189px;
+            height: 169px;
+            top: 0;
+            left: 0;
+            background-image: url(./img/rectangle-24.svg);
+            background-size: 100% 100%;
+        }
+        
+        .wireframe .image {        /*top1 news image*/
+            height: 140px;
+            top: 14px;
+            position: absolute;
+            width: 189px;
+            left: 0;
+            object-fit: cover;
+        }
+        
+        .wireframe .img-wrapper {
+            position: absolute;
+            width: 189px;
+            height: 169px;
+            top: 200px;
+            left: 0;
+            background-image: url(./img/rectangle-27.svg);
+            background-size: 100% 100%;
+        }
+        
+        .wireframe .img {      /*top2 news image*/
+            height: 140px;
+            top: 23px;
+            position: absolute;
+            width: 189px;
+            left: 0;
+            object-fit: cover;
+        }
+
+        .wireframe .rectangle-5 {    /*top3 news image*/
+            position: absolute;
+            width: 189px;
+            height: 140px;
+            top: 428px;
+            left: 0;
+        }
+        
+        .wireframe .text-wrapper-5 {    /*Recent News*/
+            position: absolute;
+            width: 676px;
+            top: 365px;
+            left: 1232px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: normal;
+            color: #000000;
+            font-size: 36px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        
+        .wireframe .p {
+            position: absolute;
+            width: 219px;
+            top: 450px;
+            left: 1320px;
+            font-family: "Fira Sans Condensed-Regular", Helvetica;
+            font-weight: 400;
+            color: #6a8200;
+            font-size: 20px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        
+        .wireframe .text-wrapper-6 {
+            position: absolute;
+            width: 219px;
+            top: 858px;
+            left: 1314px;
+            font-family: "Fira Sans Condensed-Regular", Helvetica;
+            font-weight: 400;
+            color: #6a8200;
+            font-size: 20px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        
+        .wireframe .text-wrapper-7 {
+            position: absolute;
+            width: 219px;
+            top: 654px;
+            left: 1320px;
+            font-family: "Fira Sans Condensed-Regular", Helvetica;
+            font-weight: 400;
+            color: #6a8200;
+            font-size: 20px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        
+        .wireframe .element-jake-michaels {      /*news 1 post hour and author*/
+            position: absolute;
+            width: 168px;
+            top: 530px;
+            left: 1320px;
+            font-family: "Fira Sans Condensed-Regular", Helvetica;
+            font-weight: 400;
+            color: #000000;
+            font-size: 10px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        
+        .wireframe .span {
+            font-family: "Fira Sans Condensed-Regular", Helvetica;
+            font-weight: 400;
+            color: #000000;
+            font-size: 10px;
+            letter-spacing: 0;
+        }
+        
+        .wireframe .text-wrapper-8 {
+            font-size: 11px;
+        }
+        
+        .wireframe .element-ESPN {      /*news 2 post hour and author*/
+            position: absolute;
+            width: 168px;
+            top: 713px;
+            left: 1323px;
+            font-family: "Fira Sans Condensed-Regular", Helvetica;
+            font-weight: 400;
+            color: #000000;
+            font-size: 10px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        
+        .wireframe .element-h-ESPN {     /*news 3 post hour and author*/
+            position: absolute;
+            width: 168px;
+            top: 940px;
+            left: 1315px;
+            font-family: "Fira Sans Condensed-Regular", Helvetica;
+            font-weight: 400;
+            color: #000000;
+            font-size: 10px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        
+        .wireframe .aryna-sabalenka-was {
+            position: absolute;
+            width: 208px;
+            top: 550px;
+            left: 1320px;
+            font-family: "Fira Sans Condensed-Regular", Helvetica;
+            font-weight: 400;
+            color: #3f3f3f;
+            font-size: 11px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        
+        .wireframe .overlap-3 {
+            position: absolute;
+            width: 1337px;
+            height: 1951px;
+            top: 1222px;
+            left: 75px;
+        }
+        
+        .wireframe .player-database {
+            position: absolute;
+            width: 1313px;
+            height: 1928px;
+            top: 23px;
+            left: 24px;
+        }
+        
+        .wireframe .player-name-flag {
+            position: absolute;
+            width: 224px;
+            height: 1621px;
+            top: 310px;
+            left: 74px;
+        }
+        
+        .wireframe .player {
+            top: 0;
+            position: absolute;
+            left: 65px;
+            font-family: "Inter-Regular", Helvetica;
+            font-weight: 400;
+            color: #000000;
+            font-size: 25px;
+            letter-spacing: 0;
+            line-height: normal;
+            white-space: nowrap;
+        }
+        
+        .wireframe .player-flag {
+            position: absolute;
+            width: 52px;
+            height: 35px;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+        
+        .wireframe .player-2 {
+            top: 394px;
+            position: absolute;
+            left: 65px;
+            font-family: "Inter-Regular", Helvetica;
+            font-weight: 400;
+            color: #000000;
+            font-size: 25px;
+            letter-spacing: 0;
+            line-height: normal;
+            white-space: nowrap;
+        }
+        
+        .wireframe .player-3 {
+            top: 792px;
+            position: absolute;
+            left: 65px;
+            font-family: "Inter-Regular", Helvetica;
+            font-weight: 400;
+            color: #000000;
+            font-size: 25px;
+            letter-spacing: 0;
+            line-height: normal;
+            white-space: nowrap;
+        }
+        
+        .wireframe .player-flag-2 {
+            position: absolute;
+            width: 52px;
+            height: 36px;
+            top: 789px;
+            left: 0;
+            object-fit: cover;
+        }
+        
+        .wireframe .player-flag-3 {
+            position: absolute;
+            width: 52px;
+            height: 35px;
+            top: 1182px;
+            left: 0;
+            object-fit: cover;
+        }
+        
+        .wireframe .player-4 {
+            top: 1182px;
+            position: absolute;
+            left: 65px;
+            font-family: "Inter-Regular", Helvetica;
+            font-weight: 400;
+            color: #000000;
+            font-size: 25px;
+            letter-spacing: 0;
+            line-height: normal;
+            white-space: nowrap;
+        }
+        
+        .wireframe .player-flag-4 {
+            position: absolute;
+            width: 52px;
+            height: 35px;
+            top: 1586px;
+            left: 0;
+            object-fit: cover;
+        }
+        
+        .wireframe .player-5 {
+            top: 1585px;
+            position: absolute;
+            left: 65px;
+            font-family: "Inter-Regular", Helvetica;
+            font-weight: 400;
+            color: #000000;
+            font-size: 25px;
+            letter-spacing: 0;
+            line-height: normal;
+            white-space: nowrap;
+        }
+        
+        .wireframe .player-flag-5 {
+            position: absolute;
+            width: 52px;
+            height: 35px;
+            top: 394px;
+            left: 0;
+            object-fit: cover;
+        }
+        
+        .wireframe .profile-pics {
+            position: absolute;
+            width: 361px;
+            height: 1873px;
+            top: 0;
+            left: 0;
+        }
+        
+        .wireframe .top-players {
+            position: absolute;
+            width: 514px;
+            top: 1141px;
+            left: 99px;
+            font-family: "Jockey One-Regular", Helvetica;
+            font-weight: 400;
+            color: #000000;
+            font-size: 48px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        
+        .wireframe .more-players-button {
+            position: absolute;
+            width: 387px;
+            height: 95px;
+            top: 3214px;
+            left: 1027px;
+        }
+        
+        .wireframe .div-wrapper {
+            position: relative;
+            width: 385px;
+            height: 95px;
+            background-color: #d9d9d9;
+            border-radius: 20px;
+            border: 1px solid;
+            border-color: #000000;
+        }
+        
+        .wireframe .text-wrapper-9 {
+            position: absolute;
+            top: 25px;
+            left: 40px;
+            font-family: "Inter-Regular", Helvetica;
+            font-weight: 400;
+            color: #000000;
+            font-size: 36px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+  
+    </style>
 </head>
