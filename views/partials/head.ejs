@@ -4,1334 +4,213 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Match Flow | <%= title %></title>
     <style>
-        *.wireframe {
-        background-color: #ffffff;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-        }
-
-        .wireframe .div {
-        background-color: #ffffff;
-        overflow: hidden;
-        width: 1512px;
-        height: 1800px;
-        position: relative;
-        }
-
-        .wireframe .overlap {
-        position: absolute;
-        width: 1908px;
-        height: 1094px;
-        top: 0;
-        left: -36px;
-        }
-
-        .wireframe .overlap-group {
-        position: absolute;
-        width: 1584px;
-        height: 1094px;
-        top: 0;
-        left: 0;
-        }
-
-        .wireframe .group {
-        position: absolute;
-        width: 908px;
-        height: 574px;
-        top: 415px;
-        left: 183px;
-        }
-
-        .wireframe .win-calculator {
-        position: relative;
-        width: 910px;
-        height: 574px;
-        }
-
-        .wireframe .overlap-group-2 {
-        position: absolute;
-        width: 312px;
-        height: 308px;
-        top: 72px;
-        left: 0;
-        }
-
-        .wireframe .rectangle { /*victory calculator player1 box*/
-        position: absolute;
-        width: 291px;
-        height: 300px;
-        top: 0;
-        left: 21px;
-        background-color: #949494;
-        border-radius: 0%;
-        }
-
-        .wireframe .medvedev-head { /*victory calculator player1 photo*/
-        position: absolute;
-        width: 288px;
-        height: 200;
-        top: 10px;
-        left: 23px;
-        object-fit: cover;
-        }
-
-        .wireframe .rectangle-2 { /*victory result button*/
-        position: absolute;
-        width: 283px;
-        height: 86px;
-        top: 430px;
-        left: 257px;
-        background-color: #b7aeae;
-        border-radius: 20px;
-        }
-
-        .wireframe .rectangle-3 { /*victory calculator player2 box*/
-        position: absolute;
-        width: 291px;
-        height: 300px;
-        top: 72px;
-        left: 463px;
-        background-color: #949494;
-        border-radius: 0%;
-        }
-
-        .wireframe .text-wrapper {
-        position: absolute;
-        width: 676px;
-        top: -50px;
-        left: 130px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-weight: normal;
-        color: #000000;
-        font-size: 36px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .line {
-        position: absolute;
-        width: 9px;
-        height: 877px;
-        top: 217px;
-        left: 1077px;
-        }
-
-        .wireframe .rectangle-4 {    /* header */
-        position: absolute;
-        width: 1600px;
-        height: 230px;
-        top: 0;
-        left: 0;
-        background-color: #3f3f3f;
-        }
-
-        .wireframe .hack-logo {
-        position: absolute;
-        width: 350px;
-        height: 350px;
-        top: 28px;
-        left: 150px;
-        object-fit: cover;
-        }
-
-        .wireframe .text-wrapper-2 {
-        position: absolute;
-        width: 555px;
-        top: 90px;
-        left: 520px;
-        font-family: "Arial Black", sans-serif;
-        font-weight: bold;
-        color: #ffffff;
-        font-size: 110px;
-        letter-spacing: 0;
-        line-height: normal;
-        white-space: nowrap;
-        }
-
-        .wireframe .sinner-head-may { /*victory calculator player2 photo*/
-        position: absolute;
-        width: 290px;
-        height: 276px;
-        top: 509px;
-        left: 645px;
-        object-fit: cover;
-        }
-
-        .wireframe .text-wrapper-3 { /*see result*/
-        position: absolute;
-        width: 227px;
-        top: 870px;
-        left: 494px;
-        font-family: "Changa One-Regular", Helvetica;
-        font-weight: 400;
-        color: #ffffff;
-        font-size: 36px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .text-wrapper-4 {
-        position: absolute;
-        width: 272px;
-        top: 827px;
-        left: 451px;
-        font-family: "Jockey One-Regular", Helvetica;
-        font-weight: 400;
-        color: #6a8200;
-        font-size: 36px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .overlap-2 {
-        position: absolute;
-        width: 189px;
-        height: 569px;
-        top: 451px;
-        left: 1112px;
-        }
-
-        .wireframe .recent-news-blocks {
-        position: absolute;
-        width: 189px;
-        height: 569px;
-        top: 0;
-        left: 0;
-        }
-
-        .wireframe .image-wrapper {
-        position: absolute;
-        width: 189px;
-        height: 169px;
-        top: 0;
-        left: 0;
-        background-image: url(./img/rectangle-24.svg);
-        background-size: 100% 100%;
-        }
-
-        .wireframe .image {        /*top1 news image*/
-        height: 140px;
-        top: 14px;
-        position: absolute;
-        width: 189px;
-        left: 0;
-        object-fit: cover;
-        }
-
-        .wireframe .img-wrapper {
-        position: absolute;
-        width: 189px;
-        height: 169px;
-        top: 200px;
-        left: 0;
-        background-image: url(./img/rectangle-27.svg);
-        background-size: 100% 100%;
-        }
-
-        .wireframe .img {      /*top2 news image*/
-        height: 140px;
-        top: 23px;
-        position: absolute;
-        width: 189px;
-        left: 0;
-        object-fit: cover;
-        }
-
-        .wireframe .rectangle-5 {    /*top3 news image*/
-        position: absolute;
-        width: 189px;
-        height: 140px;
-        top: 428px;
-        left: 0;
-        }
-
-        .wireframe .text-wrapper-5 {    /*Recent News*/
-        position: absolute;
-        width: 676px;
-        top: 365px;
-        left: 1232px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-weight: normal;
-        color: #000000;
-        font-size: 36px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .p {
-        position: absolute;
-        width: 219px;
-        top: 450px;
-        left: 1320px;
-        font-family: "Fira Sans Condensed-Regular", Helvetica;
-        font-weight: 400;
-        color: #6a8200;
-        font-size: 20px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .text-wrapper-6 {
-        position: absolute;
-        width: 219px;
-        top: 858px;
-        left: 1314px;
-        font-family: "Fira Sans Condensed-Regular", Helvetica;
-        font-weight: 400;
-        color: #6a8200;
-        font-size: 20px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .text-wrapper-7 {
-        position: absolute;
-        width: 219px;
-        top: 654px;
-        left: 1320px;
-        font-family: "Fira Sans Condensed-Regular", Helvetica;
-        font-weight: 400;
-        color: #6a8200;
-        font-size: 20px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .element-jake-michaels {      /*news 1 post hour and author*/
-        position: absolute;
-        width: 168px;
-        top: 530px;
-        left: 1320px;
-        font-family: "Fira Sans Condensed-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 10px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .span {
-        font-family: "Fira Sans Condensed-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 10px;
-        letter-spacing: 0;
-        }
-
-        .wireframe .text-wrapper-8 {
-        font-size: 11px;
-        }
-
-        .wireframe .element-ESPN {      /*news 2 post hour and author*/
-        position: absolute;
-        width: 168px;
-        top: 713px;
-        left: 1323px;
-        font-family: "Fira Sans Condensed-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 10px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .element-h-ESPN {     /*news 3 post hour and author*/
-        position: absolute;
-        width: 168px;
-        top: 940px;
-        left: 1315px;
-        font-family: "Fira Sans Condensed-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 10px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .aryna-sabalenka-was {
-        position: absolute;
-        width: 208px;
-        top: 550px;
-        left: 1320px;
-        font-family: "Fira Sans Condensed-Regular", Helvetica;
-        font-weight: 400;
-        color: #3f3f3f;
-        font-size: 11px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .overlap-3 {
-        position: absolute;
-        width: 1337px;
-        height: 1951px;
-        top: 1222px;
-        left: 75px;
-        }
-
-        .wireframe .player-database {
-        position: absolute;
-        width: 1313px;
-        height: 1928px;
-        top: 23px;
-        left: 24px;
-        }
-
-        .wireframe .player-name-flag {
-        position: absolute;
-        width: 224px;
-        height: 1621px;
-        top: 310px;
-        left: 74px;
-        }
-
-        .wireframe .player {
-        top: 0;
-        position: absolute;
-        left: 65px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        white-space: nowrap;
-        }
-
-        .wireframe .player-flag {
-        position: absolute;
-        width: 52px;
-        height: 35px;
-        top: 0;
-        left: 0;
-        object-fit: cover;
-        }
-
-        .wireframe .player-2 {
-        top: 394px;
-        position: absolute;
-        left: 65px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        white-space: nowrap;
-        }
-
-        .wireframe .player-3 {
-        top: 792px;
-        position: absolute;
-        left: 65px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        white-space: nowrap;
-        }
-
-        .wireframe .player-flag-2 {
-        position: absolute;
-        width: 52px;
-        height: 36px;
-        top: 789px;
-        left: 0;
-        object-fit: cover;
-        }
-
-        .wireframe .player-flag-3 {
-        position: absolute;
-        width: 52px;
-        height: 35px;
-        top: 1182px;
-        left: 0;
-        object-fit: cover;
-        }
-
-        .wireframe .player-4 {
-        top: 1182px;
-        position: absolute;
-        left: 65px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        white-space: nowrap;
-        }
-
-        .wireframe .player-flag-4 {
-        position: absolute;
-        width: 52px;
-        height: 35px;
-        top: 1586px;
-        left: 0;
-        object-fit: cover;
-        }
-
-        .wireframe .player-5 {
-        top: 1585px;
-        position: absolute;
-        left: 65px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        white-space: nowrap;
-        }
-
-        .wireframe .player-flag-5 {
-        position: absolute;
-        width: 52px;
-        height: 35px;
-        top: 394px;
-        left: 0;
-        object-fit: cover;
-        }
-
-        .wireframe .profile-pics {
-        position: absolute;
-        width: 361px;
-        height: 1873px;
-        top: 0;
-        left: 0;
-        }
-
-        .wireframe .more-players-button {
-        position: absolute;
-        width: 387px;
-        height: 95px;
-        top: 3214px;
-        left: 1027px;
-        }
-
-        .wireframe .div-wrapper {
-        position: relative;
-        width: 385px;
-        height: 95px;
-        background-color: #d9d9d9;
-        border-radius: 20px;
-        border: 1px solid;
-        border-color: #000000;
-        }
-
-        .wireframe .text-wrapper-9 {
-        position: absolute;
-        top: 25px;
-        left: 40px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 36px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        /* ----------------------------------------------------*/
-        .wireframe .top-players {
-        position: absolute;
-        width: 514px;
-        top: 1150px;
-        left: 40px;
-        font-family: "Arial Black", sans-serif;
-        font-weight: bold;
-        color: #000000;
-        font-size: 38px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .more-players-button {
-        position: absolute;
-        width: 387px;
-        height: 95px;
-        top: 1881px;
-        left: 1051px;
-        }
-
-        .wireframe .div-wrapper {
-        position: relative;
-        width: 385px;
-        height: 95px;
-        background-color: #d9d9d9;
-        border-radius: 20px;
-        border: 1px solid;
-        border-color: #000000;
-        }
-
-        .wireframe .text-wrapper-9 {
-        position: absolute;
-        top: 25px;
-        left: 40px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 36px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .overlap-3 {
-        position: absolute;
-        width: 2421px;
-        height: 229px;
-        top: 2098px;
-        left: -54px;
-        }
-
-        .wireframe .header {
-        position: absolute;
-        width: 1584px;
-        height: 229px;
-        top: 0;
-        left: 31px;
-        background-color: #3f3f3f;
-        }
-
-        .wireframe .footer {            
-        position: absolute;
-        width: 1584px;
-        height: 270px;
-        top: 0;
-        left: 31px;
-        background-color: #3f3f3f;
-        }
-
-        .wireframe .overlap-wrapper {
-        position: absolute;
-        width: 2421px;
-        height: 164px;
-        top: 0;
-        left: 0;
-        }
-
-        .wireframe .text-wrapper-10 {
-        left: 1280px;
-        position: absolute;
-        width: 1277px;
-        top: 15px;
-        transform: rotate(0%);
-        font-family: "Arial Black", sans-serif;
-        font-weight: 400;
-        color: #4d4d4d69;
-        font-size: 180px;
-        letter-spacing: 0;
-        line-height: normal;
-        white-space: nowrap;
-        }
-
-        .wireframe .text-wrapper-11 {
-        left: 0px;
-        position: absolute;
-        width: 1277px;
-        top: 15px;
-        transform: rotate(0%);
-        font-family: "Arial Black", sans-serif;
-        font-weight: 400;
-        color: #4d4d4d69;
-        font-size: 180px;
-        letter-spacing: 0;
-        line-height: normal;
-        white-space: nowrap;
-        }
-
-        .wireframe .hack-logo-2 {
-        width: 200px;
-        height: 137px;
-        top: 65px;
-        left: 54px;
-        position: absolute;
-        object-fit: cover;
-        }
-
-        .wireframe .overlap-group-wrapper {
-        position: absolute;
-        width: 1475px;
-        height: 365px;
-        top: 0;
-        left: 0;
-        }
-
-        .wireframe .overlap-6 {
-        position: relative;
-        width: 1481px;
-        height: 365px;
-        }
-
-        .wireframe .player-database {
-        position: absolute;
-        width: 1470px;
-        height: 344px;
-        top: 0;
-        left: 0;
-        }
-
-        .wireframe .rectangle-10 {
-        position: absolute;
-        width: 280px;
-        height: 344px;
-        top: 0;
-        left: 299px;
-        background-color: #d9d9d9;
-        border-radius: 20px;
-        border: 1px solid;
-        border-color: #000000;
-        }
-
-        .wireframe .rectangle-6 {
-        position: absolute;
-        width: 280px;
-        height: 344px;
-        top: 0;
-        left: 0;
-        background-color: #d9d9d9;
-        border-radius: 20px;
-        border: 1px solid;
-        border-color: #000000;
-        }
-
-        .wireframe .rectangle-7 {
-        position: absolute;
-        width: 280px;
-        height: 344px;
-        top: 0;
-        left: 596px;
-        background-color: #d9d9d9;
-        border-radius: 20px;
-        border: 1px solid;
-        border-color: #000000;
-        }
-
-        .wireframe .rectangle-8 {
-        position: absolute;
-        width: 280px;
-        height: 344px;
-        top: 0;
-        left: 894px;
-        background-color: #d9d9d9;
-        border-radius: 20px;
-        border: 1px solid;
-        border-color: #000000;
-        }
-
-        .wireframe .rectangle-9 {
-        position: absolute;
-        width: 280px;
-        height: 344px;
-        top: 0;
-        left: 1191px;
-        background-color: #d9d9d9;
-        border-radius: 20px;
-        border: 1px solid;
-        border-color: #000000;
-        }
-
-        .wireframe .player-name-flag {
-        position: absolute;
-        width: 1380px;
-        height: 331px;
-        top: 34px;
-        left: 101px;
-        }
-
-        .wireframe .player {
-        position: absolute;
-        width: 163px;
-        height: 72px;
-        top: 259px;
-        left: 0;
-        }
-
-        .wireframe .player-2 {
-        position: absolute;
-        width: 172px;
-        top: -1px;
-        left: -9px;
-        font-family: "Istok Web-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .player-3 {
-        position: absolute;
-        width: 151px;
-        top: 259px;
-        left: 297px;
-        font-family: "Istok Web-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .player-4 {
-        position: absolute;
-        width: 194px;
-        top: 259px;
-        left: 843px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .player-5 {
-        position: absolute;
-        width: 223px;
-        top: 262px;
-        left: 1151px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .more-players-button {
-        position: absolute;
-        width: 387px;
-        height: 95px;
-        top: 1881px;
-        left: 1051px;
-        }
-
-        .wireframe .div-wrapper {
-        position: relative;
-        width: 385px;
-        height: 95px;
-        background-color: #d9d9d9;
-        border-radius: 20px;
-        border: 1px solid;
-        border-color: #000000;
-        }
-
-        .wireframe .text-wrapper-9 {
-        position: absolute;
-        top: 25px;
-        left: 40px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 36px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .overlap-3 {
-        position: absolute;
-        width: 2421px;
-        height: 229px;
-        top: 2098px;
-        left: -54px;
-        }
-
-        .wireframe .overlap-wrapper {
-        position: absolute;
-        width: 2421px;
-        height: 164px;
-        top: 0;
-        left: 0;
-        }
-
-        .wireframe .overlap-4 {
-        position: relative;
-        width: 2417px;
-        height: 164px;
-        }
-
-        .wireframe .instagram-riverside {
-        position: absolute;
-        width: 424px;
-        top: 90px;
-        left: 256px;
-        font-family: "Lalezar-Regular", Helvetica;
-        font-weight: 400;
-        color: #ffffff;
-        font-size: 23px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .overlap-5 {
-        position: absolute;
-        width: 1475px;
-        height: 365px;
-        top: 1243px;
-        left: 17px;
-        }
-
-        .wireframe .overlap-group-wrapper {
-        position: absolute;
-        width: 1475px;
-        height: 365px;
-        top: 0;
-        left: 0;
-        }
-
-        .wireframe .overlap-6 {
-        position: relative;
-        width: 1481px;
-        height: 365px;
-        }
-
-        .wireframe .player-database {
-        position: absolute;
-        width: 1470px;
-        height: 344px;
-        top: 0;
-        left: 0;
-        }
-
-        .wireframe .rectangle-6 {
-        position: absolute;
-        width: 280px;
-        height: 344px;
-        top: 0;
-        left: 0;
-        background-color: #d9d9d9;
-        border-radius: 20px;
-        border: 1px solid;
-        border-color: #000000;
-        }
-
-        .wireframe .rectangle-7 {
-        position: absolute;
-        width: 280px;
-        height: 344px;
-        top: 0;
-        left: 596px;
-        background-color: #d9d9d9;
-        border-radius: 20px;
-        border: 1px solid;
-        border-color: #000000;
-        }
-
-        .wireframe .rectangle-8 {
-        position: absolute;
-        width: 280px;
-        height: 344px;
-        top: 0;
-        left: 894px;
-        background-color: #d9d9d9;
-        border-radius: 20px;
-        border: 1px solid;
-        border-color: #000000;
-        }
-
-        .wireframe .rectangle-9 {
-        position: absolute;
-        width: 280px;
-        height: 344px;
-        top: 0;
-        left: 1191px;
-        background-color: #d9d9d9;
-        border-radius: 20px;
-        border: 1px solid;
-        border-color: #000000;
-        }
-
-        .wireframe .player-name-flag {
-        position: absolute;
-        width: 1380px;
-        height: 331px;
-        top: 34px;
-        left: 101px;
-        }
-
-        .wireframe .player {
-        position: absolute;
-        width: 163px;
-        height: 72px;
-        top: 259px;
-        left: 0;
-        }
-
-        .wireframe .player-2 {
-        position: absolute;
-        width: 172px;
-        top: -1px;
-        left: -9px;
-        font-family: "Istok Web-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .player-3 {
-        position: absolute;
-        width: 151px;
-        top: 259px;
-        left: 297px;
-        font-family: "Istok Web-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .player-4 {
-        position: absolute;
-        width: 194px;
-        top: 259px;
-        left: 843px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .player-5 {
-        position: absolute;
-        width: 223px;
-        top: 262px;
-        left: 1151px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .medvedev-head-2 {
-        position: absolute;
-        width: 233px;
-        height: 233px;
-        top: 0;
-        left: 817px;
-        object-fit: cover;
-        }
-
-        .wireframe .djokovic {
-        position: absolute;
-        width: 239px;
-        height: 247px;
-        top: 30px;
-        left: 26px;
-        object-fit: cover;
-        }
-
-        .wireframe .alcaraz {
-        position: absolute;
-        width: 220px;
-        height: 234px;
-        top: 33px;
-        left: 626px;
-        object-fit: cover;
-        }
-
-        .wireframe .djokoviccountry {
-        position: absolute;
-        width: 44px;
-        height: 31px;
-        top: 293px;
-        left: 34px;
-        object-fit: cover;
-        }
-
-        .wireframe .sinner-head-may-2 {
-        width: 220px;
-        height: 256px;
-        top: 21px;
-        left: 328px;
-        position: absolute;
-        object-fit: cover;
-        }
-
-        .wireframe .sinnercountry {
-        position: absolute;
-        width: 48px;
-        height: 35px;
-        top: 289px;
-        left: 329px;
-        object-fit: cover;
-        }
-
-        .wireframe .zverev {
-        position: absolute;
-        width: 260px;
-        height: 271px;
-        top: 13px;
-        left: 1200px;
-        object-fit: cover;
-        }
-
-        .wireframe .zverevcountry {
-        position: absolute;
-        width: 44px;
-        height: 30px;
-        top: 296px;
-        left: 1204px;
-        object-fit: cover;
-        }
-
-        .wireframe .alcarazcountry {
-        position: absolute;
-        width: 50px;
-        height: 36px;
-        top: 288px;
-        left: 622px;
-        object-fit: cover;
-        }
-
-        .wireframe .player-6 {
-        position: absolute;
-        width: 171px;
-        top: 288px;
-        left: 686px;
-        font-family: "Istok Web-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .ranking-age {
-        position: absolute;
-        width: 221px;
-        top: 1625px;
-        left: 44px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        text-align: center;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .ranking-age-2 {
-        position: absolute;
-        width: 221px;
-        top: 1629px;
-        left: 344px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        text-align: center;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .ranking-age-3 {
-        position: absolute;
-        width: 221px;
-        top: 1634px;
-        left: 653px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        text-align: center;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .ranking-age-4 {
-        position: absolute;
-        width: 221px;
-        top: 1633px;
-        left: 945px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        text-align: center;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .ranking-age-5 {
-        position: absolute;
-        width: 221px;
-        top: 1628px;
-        left: 1236px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        text-align: center;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .djokovic {
-        position: absolute;
-        width: 239px;
-        height: 247px;
-        top: 30px;
-        left: 26px;
-        object-fit: cover;
-        }
-
-        .wireframe .alcaraz {
-        position: absolute;
-        width: 220px;
-        height: 234px;
-        top: 33px;
-        left: 626px;
-        object-fit: cover;
-        }
-
-        .wireframe .djokoviccountry {
-        position: absolute;
-        width: 44px;
-        height: 31px;
-        top: 293px;
-        left: 34px;
-        object-fit: cover;
-        }
-
-        .wireframe .sinner-head-may-2 {
-        width: 220px;
-        height: 256px;
-        top: 21px;
-        left: 328px;
-        position: absolute;
-        object-fit: cover;
-        }
-
-        .wireframe .sinnercountry {
-        position: absolute;
-        width: 48px;
-        height: 35px;
-        top: 289px;
-        left: 329px;
-        object-fit: cover;
-        }
-
-        .wireframe .zverev {
-        position: absolute;
-        width: 260px;
-        height: 271px;
-        top: 13px;
-        left: 1200px;
-        object-fit: cover;
-        }
-
-        .wireframe .zverevcountry {
-        position: absolute;
-        width: 44px;
-        height: 30px;
-        top: 296px;
-        left: 1204px;
-        object-fit: cover;
-        }
-
-        .wireframe .alcarazcountry {
-        position: absolute;
-        width: 50px;
-        height: 36px;
-        top: 288px;
-        left: 622px;
-        object-fit: cover;
-        }
-
-        .wireframe .player-6 {
-        position: absolute;
-        width: 171px;
-        top: 288px;
-        left: 686px;
-        font-family: "Istok Web-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .ranking-age {
-        position: absolute;
-        width: 221px;
-        top: 1625px;
-        left: 44px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        text-align: center;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .ranking-age-2 {
-        position: absolute;
-        width: 221px;
-        top: 1629px;
-        left: 344px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        text-align: center;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .ranking-age-3 {
-        position: absolute;
-        width: 221px;
-        top: 1634px;
-        left: 653px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        text-align: center;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .ranking-age-4 {
-        position: absolute;
-        width: 221px;
-        top: 1633px;
-        left: 945px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        text-align: center;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-        .wireframe .ranking-age-5 {
-        position: absolute;
-        width: 221px;
-        top: 1628px;
-        left: 1236px;
-        font-family: "Inter-Regular", Helvetica;
-        font-weight: 400;
-        color: #000000;
-        font-size: 25px;
-        text-align: center;
-        letter-spacing: 0;
-        line-height: normal;
-        }
-
-  
+        /* Base styles */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.bg-gray-100 {
+    background-color: #f3f4f6;
+}
+
+.dark\:bg-gray-900 {
+    background-color: #1f2937;
+}
+
+/* Header styles */
+header {
+    justify-content: center;
+    padding-top: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-3xl {
+    font-size: 1.875rem;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-gray-900 {
+    color: #374151;
+}
+
+.dark\:text-gray-100 {
+    color: #ffffff;
+}
+
+/* Navigation styles */
+nav {
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    background-color: #edf2f7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.text-gray-700 {
+    color: #4b5563;
+}
+
+.dark\:text-gray-300 {
+    color: #d1d5db;
+}
+
+.hover\:underline:hover {
+    text-decoration: underline;
+}
+
+/* Main section styles */
+main {
+    padding: 1rem;
+}
+
+.lg\:flex {
+    display: flex;
+}
+
+.lg\:flex-row {
+    flex-direction: row;
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.lg\:p-8 {
+    padding: 2rem;
+}
+
+/* Section styles */
+section {
+    gap: 1.5rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.lg\:w-2\/3 {
+    width: 66.666667%;
+}
+
+.lg\:w-1\/3 {
+    width: 33.333333%;
+}
+
+/* Card styles */
+.flex-col .p-6 {
+    padding: 1.5rem;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.dark\:bg-gray-800 {
+    background-color: #2d3748;
+}
+
+.rounded-lg {
+    border-radius: 0.375rem;
+}
+
+.shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Button styles */
+.inline-flex {
+    display: inline-flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.bg-blue-600 {
+    background-color: #2563eb;
+}
+
+.rounded-md {
+    border-radius: 0.375rem;
+}
+
+.hover\:bg-blue-700:hover {
+    background-color: #1d4ed8;
+}
+
+/* Article styles */
+.text-2xl {
+    font-size: 1.5rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-gray-500 {
+    color: #6b7280;
+}
+
+.dark\:text-gray-400 {
+    color: #9ca3af;
+}
+
+.hover\:underline:hover {
+    text-decoration: underline;
+}
     </style>
+    
 </head>
