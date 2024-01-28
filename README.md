@@ -53,21 +53,24 @@ Match-flow의 로고는 각 종목 관련 공 (이번에 경우는 테니스볼�
 ## Front-end
 Figma Link : https://www.figma.com/file/FCX69xkrOFVbCETL9qAWMs/%ED%8C%80_%EB%8B%A8%EA%B5%B0%ED%95%A0%EC%95%84%EB%B2%84%EC%A7%80%EC%BD%94%EB%94%A9%ED%95%98%EC%8B%9C%EA%B3%A0?type=design&node-id=0%3A1&mode=design&t=7nVwXFddyRx8Ldwi-1
 
-<p1>Homepage
+<p1>Homepage</p1>
+
 ![Homepage](https://github.com/williamEKim/Match-Flow/assets/157926825/70f96a85-c5a7-4fe3-9b93-27c8eea5215f)
-</p1>
 
-<p2> Player Detail Page
+
+<p2> Player Detail Page</p2>
+
 ![Player Detail page](https://github.com/williamEKim/Match-Flow/assets/157926825/17382968-a859-448c-a69e-e56d0a194fae)
-</p2>
 
-<p3> News Page
+
+<p3> News Page</p3>
+
 ![News](https://github.com/williamEKim/Match-Flow/assets/157926825/22c39b94-77d0-4287-ba99-bd882b361ef7)
-</p3>
 
-<p4> List of Players Page
+
+<p4> List of Players Page</p4>
 ![List of Players ](https://github.com/williamEKim/Match-Flow/assets/157926825/5fdca5e7-3108-41af-9dcb-4f17bddccd39)
-</p4>
+
 
 
 
